@@ -1,0 +1,29 @@
+﻿@model Login.Models.UserModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dark Theme</title>
+    <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Welcome Back</h2>
+            <form method="post" asp-action="Login">
+                <input type="text" name="Username" placeholder="Username" required>
+                <input type="password" name="Password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p class="error-message">@ViewBag.Message</p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+

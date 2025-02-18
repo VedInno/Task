@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "To-Do List";
+}
+
+@model List<string>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List - Dark Theme</title>
+    <link rel="stylesheet" href="~/css/styles.css">
+</head>
+<body>
+    <div class="todo-container">
+        <h2>To-Do List</h2>
+        <form method="post" asp-action="AddTask">
+            <input type="text" name="task" placeholder="Enter task" required>
+            <button type="submit" class="btn-primary">Add</button>
+        </form>
+        <ul>
+            @foreach (var task in Model)
+            {
+                <li>
+                    <input type="checkbox">
+                    <span>@task</span>
+                    <form method="post" asp-action="RemoveTask" style="display:inline;">
+                        <input type="hidden" name="task" value="@task">
+                        <button type="submit" class="btn-danger">Remove</button>
+                    </form>
+                </li>
+            }
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
