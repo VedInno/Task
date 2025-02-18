@@ -6,8 +6,8 @@ namespace LoginApp.Controllers
     public class HomeController : Controller
     {
         
-        private const string ValidUsername = "vedant.shahi@innoage.in";
-        private const string ValidPassword = "Vedsh@1267";
+        private const string ValidUsername = "############";
+        private const string ValidPassword = "############";
         private static List<string> ToDoList = new List<string>();
 
         public IActionResult Logout()
